@@ -1,88 +1,119 @@
+body {
+    font-family: 'Yeon Sung', cursive;
+    background-color: rgb(70, 70, 70);
+    color: white; /* 기본 글자색 흰색으로 통일 */
+}
+
 article {
     display: flex;
     flex-direction: column;
 }
 
-.question{
-    display:none;
+.question, .result {
+    display: none;
 }
 
-.result{
-    display:none;
+#img {
+    width: 200px; /* 모바일 고려해 약간 축소 */
+    height: 200px;
+    margin: 0 auto;
+    object-fit: cover; /* 이미지가 찌그러지지 않게 방지 */
 }
 
-#img{
-    width: 300px;
-    height: 300px;
-    margin: 0 auto;   
-}
-.containter{
-    background-color: rgb(70, 70, 70);
-}
-.title{
-    font-size: 60px;
+/* 모바일 폰트 사이즈 기본 세팅 */
+.title {
+    font-size: 40px; 
     color: red;
     -webkit-text-stroke-color: black;
     -webkit-text-stroke-width: 1px;
-    
-}
-.btn{
-    width: 40%; 
-    
-}
-#teststart{
-    -webkit-text-fill-color: black;
-    font-size: 40px;
-}
-body{
-    font-family: 'Yeon Sung', cursive;
-}
-.made{
-    color:white;
-    margin-top: 100px;
-    font-size:20px;
+    word-break: keep-all; /* 단어 단위 줄바꿈 유지 */
 }
 
-.gametitle{
-    margin-top: 100px;
+.gametitle {
+    margin-top: 50px;
     font-size: 20px;
     color: red;
-    padding:0%;
+    padding: 0%;
 }
-.maccu{
+
+.maccu {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;   
     position: relative;
 }
+
+/* 모바일 버튼 폭 확대 */
+.btn {
+    width: 90%; 
+    max-width: 400px; /* PC에서도 너무 커지지 않게 제한 */
+    font-size: 18px;
+    word-break: keep-all;
+}
+
+#teststart {
+    -webkit-text-fill-color: black;
+    font-size: 30px;
+}
+
+.made {
+    color: white;
+    font-size: 16px;
+}
+
 .progress {
     background-color: #525764;
 }
+
 .qc {
-    font-size: 30px;
+    font-size: 26px;
     color: #ff9300;
+    word-break: keep-all;
+    padding: 0 15px;
 }
 
-.exp{
+.exp {
     font-size: 14px;
     color: orange;
 }
 
-.result > h3{
-    color:red;
-    font-size: 23px;
+.result > h3 {
+    color: red;
+    font-size: 18px;
     font-weight: normal;
-    margin: 0 200px 0 200px;
-}
-#A{
-    font-size: 22px;
-}
-
-#B{
-    font-size: 22px;
+    margin: 0 20px 0 20px; /* 모바일에서 좌우 여백 축소 */
+    line-height: 1.6;
+    word-break: keep-all;
 }
 
-.result-animal{
+.result-animal {
     -webkit-text-stroke-color: aliceblue;
+}
+
+/* 데스크탑(PC) 화면용 미디어 쿼리 */
+@media (min-width: 768px) {
+    .title {
+        font-size: 60px;
+    }
+    .gametitle, .made {
+        margin-top: 100px;
+    }
+    .btn {
+        width: 40%; 
+    }
+    #teststart {
+        font-size: 40px;
+    }
+    .qc {
+        font-size: 30px;
+    }
+    #img {
+        width: 300px;
+        height: 300px;
+    }
+    .result > h3 {
+        font-size: 23px;
+        margin: 0 200px 0 200px; /* PC에서는 기존의 넓은 여백 유지 */
+    }
 }
